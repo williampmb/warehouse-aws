@@ -1,6 +1,7 @@
 package com.warehouse.aws.models;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
@@ -22,7 +23,7 @@ public class HttpResponseWarehouse {
 		this.body = json;
 	}
 
-	public HttpResponseWarehouse(Product[] products) {
+	public HttpResponseWarehouse(List<Product> products) {
 		this();
 		Gson gson = new Gson();
 		String json = gson.toJson(products);

@@ -5,7 +5,7 @@ public class Product {
 	private Long id;
 	private String branch;
 	private String name;
-	private int quantity;
+	private Integer quantity;
 
 	public Product() {
 	}

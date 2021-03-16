@@ -1,5 +1,6 @@
 package com.warehouse.aws.functions;
 
+import java.util.List;
 import java.util.Map;
 
 import com.amazonaws.services.lambda.runtime.Context;
@@ -17,7 +18,7 @@ public class WarehouseGetProducts implements RequestHandler<HttpRequestWarehouse
 		
 		HttpResponseWarehouse response;
 		if (pathParameters == null) {
-			Product[] products = ProductService.getAllProducts();
+			List<Product> products = ProductService.getAllProducts();
 
 			response = new HttpResponseWarehouse(products);
 		}else {
