@@ -99,6 +99,19 @@ public class ProductService {
 		String json = gson.toJson(products);
 		return json;
 	}
+
+	public static boolean deteleProduct(String idStr) {
+		List<Product> products = loadProducts();
+		
+		Long id = Long.parseLong(idStr);
+		
+		products.removeIf(prod -> prod.getId() == id);
+		
+		String productsToJson = productsToJson(products);
+		boolean saveProducts = saveProducts(productsToJson);
+		
+		return saveProducts;
+	}
 	
 
 }
